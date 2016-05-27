@@ -15,12 +15,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String[] values = new String []{ "Android", "iPhone", "WindowsMobile",
+        String[] values = new String[]{"Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
-                "Linux", "OS/2" };
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, R.layout.list_images_text,R.id.label,
-                values);
-        final ListView listView = (ListView)findViewById(R.id.listView);
+                "Linux", "OS/2"};
+//        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, R.layout.list_images_text,R.id.label,
+//                values);
+        final ListView listView = (ListView) findViewById(R.id.listView);
+//        assert listView != null;
+//        listView.setAdapter(adapter);
+
+        MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
         assert listView != null;
         listView.setAdapter(adapter);
 
