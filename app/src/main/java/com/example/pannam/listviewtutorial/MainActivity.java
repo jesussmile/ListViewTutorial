@@ -20,11 +20,16 @@ public class MainActivity extends AppCompatActivity {
                 "Linux", "OS/2"};
 //        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, R.layout.list_images_text,R.id.label,
 //                values);
-        final ListView listView = (ListView) findViewById(R.id.listView);
 //        assert listView != null;
 //        listView.setAdapter(adapter);
 
-        MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
+      //  MySimpleArrayAdapter adapter = new MySimpleArrayAdapter(this, values);
+
+      //performance list view with view holder
+
+        MyPerformanceArrayAdapter adapter = new MyPerformanceArrayAdapter(this, values);
+        final ListView listView = (ListView) findViewById(R.id.listView);
+
         assert listView != null;
         listView.setAdapter(adapter);
 
