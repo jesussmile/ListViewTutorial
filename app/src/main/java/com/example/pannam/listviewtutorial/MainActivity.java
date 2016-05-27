@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         String[] values = new String []{ "Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
                 "Linux", "OS/2" };
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, R.layout.list_images_text,R.id.label,
                 values);
         final ListView listView = (ListView)findViewById(R.id.listView);
         assert listView != null;
