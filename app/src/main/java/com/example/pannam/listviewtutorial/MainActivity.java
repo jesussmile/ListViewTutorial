@@ -1,5 +1,6 @@
 package com.example.pannam.listviewtutorial;
 
+import android.app.ListActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
         String[] values = new String[]{"Android", "iPhone", "WindowsMobile",
                 "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
                 "Linux", "OS/2"};
-//        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, R.layout.list_images_text,R.id.label,
-//                values);
+        final ListView listView = (ListView) findViewById(R.id.listView);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice,
+                values);
 //        assert listView != null;
 //        listView.setAdapter(adapter);
 
@@ -27,11 +29,12 @@ public class MainActivity extends AppCompatActivity {
 
       //performance list view with view holder
 
-        MyPerformanceArrayAdapter adapter = new MyPerformanceArrayAdapter(this, values);
-        final ListView listView = (ListView) findViewById(R.id.listView);
+     //   MyPerformanceArrayAdapter adapter = new MyPerformanceArrayAdapter(this, values);
+
 
         assert listView != null;
         listView.setAdapter(adapter);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
